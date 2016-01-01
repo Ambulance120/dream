@@ -9,7 +9,7 @@
     <meta name="keywords" content="Admin Platform" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" type="text/css" class="ui" href="/semantic/semantic.min.css">
-    <script src="/semantic/jquery-2.1.1.min.js"></script>
+    <script src="/javascript/jquery-2.1.1.min.js"></script>
     <script src="/semantic/semantic.min.js"></script>
 <style>
 body{
@@ -18,6 +18,11 @@ body{
 body.pushable{
   background-color: #ffffff!important;
 }
+
+.dropdown{
+z-index: 9999;
+}
+
 
 .top.menu{
     background-color: #fff !important;
@@ -83,8 +88,6 @@ padding-left: 50px;
    margin-top: 12px;
 }
 
-@yield('style')
-
 </style>
 <script>
     $(function(){
@@ -124,10 +127,6 @@ padding-left: 50px;
 $('.ui.accordion')
   .accordion();
  });
-
- $('.ui.modal')
-   .modal('show')
- ;
 </script>
 </head>
 <body>
@@ -316,88 +315,87 @@ $('.ui.accordion')
          </div>
 
          <div class="ui left teal pointing  link item" style="width: 160px;">
-               <div class="ui styled accordion box_controll" >
-                       <div class="title">
-                                   {{-- <i class="dropdown icon"></i>--}}
-                            <i class="file excel outline icon"></i>
-                               报表查询
-                       </div>
-                                <div class="content">
-                                       <div class="accordion box_controll">
-                                           <div class="title">
-                                               {{-- <i class="dropdown icon"></i>--}}
-                                                采购报表
+                           <div class="ui styled accordion box_controll" >
+                                   <div class="title">
+                                                       {{-- <i class="dropdown icon"></i>--}}
+                                                <i class="file excel outline icon"></i>
+                                                   报表查询
                                            </div>
-                                           <div class="content">
-                                               <p><a href="#">采购进货明细表</a></p>
-                                               <p><a href="#">采购统计表</a></p>
-                                               <p><a href="#">采购价格分析</a></p>
-                                           </div>
-                                           <div class="title">
-                                              {{--  <i class="dropdown icon"></i>--}}
-                                                销售报表
-                                          </div>
-                                           <div class="content">
-                                           <p><a href="#">销售明细表</a></p>
-                                           <p><a href="#">销售统计表</a></p>
-                                           <p><a href="#">销售毛利统计表</a></p>
-                                          </div>
-                                          <div class="title">
-                                        {{--  <i class="dropdown icon"></i>--}}
-                                            库存报表
-                                           </div>
-                                         <div class="content">
-                                         <p><a href="#">库存余额表</a></p>
-                                         <p><a href="#">收发明细表</a></p>
-                                         <p><a href="#">收发存统计表</a></p>
-                                         <p><a href="#">负库存量存货查询</a></p>
-                                        </div>
+                                                    <div class="content">
+                                                           <div class="accordion box_controll">
+                                                               <div class="title">
+                                                                   {{-- <i class="dropdown icon"></i>--}}
+                                                                    采购报表
+                                                               </div>
+                                                               <div class="content">
+                                                                   <p><a href="#">采购进货明细表</a></p>
+                                                                   <p><a href="#">采购统计表</a></p>
+                                                                   <p><a href="#">采购价格分析</a></p>
+                                                               </div>
+                                                               <div class="title">
+                                                                  {{--  <i class="dropdown icon"></i>--}}
+                                                                    销售报表
+                                                              </div>
+                                                               <div class="content">
+                                                               <p><a href="#">销售明细表</a></p>
+                                                               <p><a href="#">销售统计表</a></p>
+                                                               <p><a href="#">销售毛利统计表</a></p>
+                                                              </div>
+                                                              <div class="title">
+                                                            {{--  <i class="dropdown icon"></i>--}}
+                                                                库存报表
+                                                               </div>
+                                                             <div class="content">
+                                                             <p><a href="#">库存余额表</a></p>
+                                                             <p><a href="#">收发明细表</a></p>
+                                                             <p><a href="#">收发存统计表</a></p>
+                                                             <p><a href="#">负库存量存货查询</a></p>
+                                                            </div>
 
-                               </div>
-                       </div>
+                                           </div>
+                                   </div>
 
-               </div>
+                           </div>
                   </div>
 
          <div class="ui left teal pointing  link item" style="width: 160px;">
-                <div class="ui styled accordion box_controll" >
-                        <div class="title">
-                                            {{-- <i class="dropdown icon"></i>--}}
-                                     <i class="settings icon"></i>
-                                        系统管理
-                                </div>
-                                         <div class="content">
-                                                <div class="accordion box_controll">
-                                                    <div class="title">
+                            <div class="ui styled accordion box_controll" >
+                                    <div class="title">
                                                         {{-- <i class="dropdown icon"></i>--}}
-                                                         <a href="/dream/setting1">系统参数</a>
-                                                    </div>
+                                                 <i class="settings icon"></i>
+                                                    系统管理
+                                            </div>
+                                                     <div class="content">
+                                                            <div class="accordion box_controll">
+                                                                <div class="title">
+                                                                    {{-- <i class="dropdown icon"></i>--}}
+                                                                     <a href="#">系统参数</a>
+                                                                </div>
 
-                                                    <div class="title">
-                                                       {{--  <i class="dropdown icon"></i>--}}
-                                                         <a href="/dream/setting2"> 用户日志</a>
-                                                   </div>
+                                                                <div class="title">
+                                                                   {{--  <i class="dropdown icon"></i>--}}
+                                                                     <a href="#"> 用户日志</a>
+                                                               </div>
 
-                                                   <div class="title">
-                                                 {{--  <i class="dropdown icon"></i>--}}
-                                                     系统配置
-                                                    </div>
-                                                  <div class="content">
-                                                  <p><a href="/dream/setting3">编码规则</a></p>
-                                                 </div>
+                                                               <div class="title">
+                                                             {{--  <i class="dropdown icon"></i>--}}
+                                                                 系统配置
+                                                                </div>
+                                                              <div class="content">
+                                                              <p><a href="#">编码规则</a></p>
+                                                             </div>
 
-                                </div>
-                        </div>
+                                            </div>
+                                    </div>
 
-                </div>
-         </div>
+                            </div>
+                   </div>
 
 </div>
 
 
 <div id="content" class="pusher">
 @yield('content')
-
 </div>
 
 

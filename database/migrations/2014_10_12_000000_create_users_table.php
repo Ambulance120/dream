@@ -19,18 +19,19 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();*/
-            $table->integer('id')->unique()->unsigned();  #学号,唯一,取正数
-            $table->string('name');                       #姓名
-            $table->string('password');                   #密码
-            $table->string('phone')->default('');  #手机 默认为空(不是可以为空,值为'')
-            $table->string('sex')->default('');    #性别 同上
-            $table->string('email')->default('');  #邮箱 同上
-            $table->string('pro_class')->default(''); #班级 同上
-            $table->boolean('is_admin')->default(0);  #是否为管理员 默认为学生
+            $table->integer('id')->unique()->unsigned();
+            $table->string('number')->unique();
+            $table->string('name');
+            $table->string('password');
+            $table->integer('phone');
+            $table->string('industry')->default('');
+            $table->string('company')->default('');
+            $table->string('address')->default('');
+            $table->string('qq')->default('');
+            $table->string('email')->default('');
+            $table->string('cnumber')->default('');
             $table->rememberToken();
             $table->timestamps();
-
-
         });
     }
 

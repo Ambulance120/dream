@@ -138,6 +138,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -198,6 +199,7 @@ return [
         'TheMailFacade'  =>App\Facades\MymailFacade::class,
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Form'      => Illuminate\Html\FormFacade::class,
+        'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

@@ -1,0 +1,202 @@
+
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+}
+#msform {
+	width: 400px;
+	margin: 100px auto;
+	position: relative;
+    text-align: center;
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	padding: 20px 0px;
+	
+	box-sizing: border-box;
+	width: 480px;
+	/*stacking fieldsets above each other*/
+	position: absolute;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	width: 80%;
+/*
+	box-sizing: border-box;
+*/
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #0d71bb;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #0d71bb;
+}
+/*headings*/
+/*.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: darkorange;
+	margin-bottom: 10px;
+}*/
+/*.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}*/
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	counter-reset: step;
+    width: 500px;
+
+}
+#progressbar li {
+	list-style-type: none;
+	color: #0d71bb;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 50%;
+	float: left;
+	position: relative;
+    font-size: 16px;
+    font-family: "Microsoft YaHei", "SimHei", "SimSun";
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 18px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #0d71bb;
+	color: white;
+}
+.succeed{
+    font-family: 'Microsoft YaHei', 'SimSun', 'Arial';
+    font-size: 32px;
+    color: orange;
+    width: 700px;
+    padding-right: 100px ;
+}
+.succeedcon{
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+    padding-top: 50px;
+}
+.top.menu{
+    background-color: #fff !important;
+    height: 64px;
+    border-bottom: 1px solid #c0c0c0 !important;
+}
+.logo img{
+    height:50px;
+    padding-top: 10px;
+}
+.top.menu .launch{
+    margin:10px 0 0 10px;
+}
+.top.menu .userinfo{
+    padding:5px !important;
+    margin:0px 20px 0px 0px;
+    width:150px;
+    cursor: pointer;
+}
+.top.menu .userinfo img{
+    height:50px;
+}
+#content{
+    margin-top:64px;
+}
+.bottom.menu{
+    min-height: 1em;
+}
+.bottom.menu .footer{
+    width:100%;
+    border-radius: 0px;
+    padding:0;
+}
+.top_title{
+    font-family: 'Microsoft YaHei', 'SimSun', 'Arial';
+    width: 40%;
+    font-size: 30px;
+    color: #fff;
+    padding-top: 21px;
+    padding-left: 50px;
+}
+.right.menu{
+    font-size: 18px;
+    color: #ffffff;
+    padding-right: 20px;
+    padding-top: 23px;
+    font-family: "Microsoft YaHei", "SimHei", "SimSun";
+}
+.right.menu1{
+    padding-right: 25px;
+}
+.right.menu2{
+    padding-right: 80px;
+}
+.field{
+    font-family: "Microsoft YaHei", "SimHei", "SimSun";
+    text-align: right;!important;
+    line-height: 30px;
+}
+.massage{
+    color: red;
+    font-family: "Microsoft YaHei", "SimHei", "SimSun";
+    font-size: 15;
+    line-height: 10px;
+}

@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+    protected $redirectPath = '/profile';
+    protected $username = 'number';
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -22,6 +24,7 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    //protected $username = 'number';
 
     /**
      * Create a new authentication controller instance.

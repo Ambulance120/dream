@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Model\Blog;
-//use App\User;
-use App\Model\Grade;
+use App\Model\Users;
 
 class UserTableSeeder extends Seeder {
 
@@ -16,47 +14,18 @@ class UserTableSeeder extends Seeder {
     {
         DB::table('users')->delete();
 
-        Blog::create([
-            'id' => 1210311232,
-            'name' => '李锐',
-            'password' => Hash::make('1210311232')
+        Users::create([
+            'number' => '111',
+            'password' => Hash::make('111')
         ]);
 
-        Blog::create([
-            'id' => 1210311233,
-            'name' => '陈曦',
-            'password' => Hash::make('1210311233')
+        Users::create([
+            'number' => '222',
+            'password' => Hash::make('222')
         ]);
-        Blog::create([
-            'id' => 1210311234,
-            'name' => '张三',
-            'password' => Hash::make('1210311234')
+        Users::create([
+            'number' => '333',
+            'password' => Hash::make('333')
         ]);
-
-        Blog::create([
-            'id' => 1234567890,
-            'name' => '管理员',
-            'password' => Hash::make('root'),
-            'is_admin' => 1
-        ]);
-
-
-        DB::table('grades')->delete();
-        Grade::create([
-            'user_id' => 1210311232,
-            'math'    => 99,
-            'english'    => 80,
-            'c'    => 96,
-            'sport'    => 95,
-            'think'    => 99,
-            'soft'    => 98,
-        ]);
-
-        Grade::create([
-            'user_id' => 1210311233,
-        ]);
-
     }
-
-
 }
