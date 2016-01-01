@@ -55,15 +55,15 @@ class SettingController extends Controller
         return view('dream.person.s_edit', ['person' => $p]);
     }
 
-    public function save(Request $request, $id = null)
-    {
-        if (isset($id)) {
-            Setting::updateOrCreate(["id" => $id], $request->input());
-        } else {
-            Setting::create($request->input());
-        }
-        return redirect("/dream/setting");
-    }
+//    public function save(Request $request, $id = null)
+//    {
+//        if (isset($id)) {
+//            Setting::updateOrCreate(["id" => $id], $request->input());
+//        } else {
+//            Setting::create($request->input());
+//        }
+//        return redirect("/dream/setting");
+//    }
 
     public function show($id)
     {
